@@ -248,11 +248,18 @@ function getArtistByIndex(array, index) {
 
 getArtistByIndex(artists, [0]);
 
-/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
+/* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) 
+
+EX: born in 1901 and died in 1959 - included / 
+born in 1889 and died in 1925 not included /
+
+/ should return ["Salvador Dali", "Frida Kahlo"]*/
 
 function get20s(/* Code here */) {
   /* Code here */
 }
+
+get20s();
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -285,9 +292,20 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist(/* Code here */) {
-  /* Code here */
+function addArtist() {
+  artists.push({
+    id: 20,
+    name: "sarah rose cooper",
+    years: "1992- current day",
+    genre: "Web Design",
+    nationality: "african american/caucasion",
+    bio:
+      " loves art, cats, music, poetry, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum lorem ipsum, and crying over javascript",
+  });
+  return artists;
 }
+
+addArtist();
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
