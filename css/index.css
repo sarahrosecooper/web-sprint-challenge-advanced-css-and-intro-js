@@ -94,13 +94,11 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.5;
-  font-family: "Raleway", sans-serif;
 }
 h1,
 p,
 .name,
 .bio {
-  font-family: "Raleway", sans-serif;
   text-align: center;
   margin: 4%;
 }
@@ -135,7 +133,8 @@ img:hover {
 }
 
 body {
-    font-family: "Raleway";
+  font-family: "Raleway";
+  font-weight: bolder;
 }
 /*HEADER STYLES */
 header {
@@ -144,8 +143,7 @@ header {
 }
 
 h1 {
-    font-family: "Raleway";
-    font-weight: bold;
+  font-weight: bold;
 }
 nav {
   width: 30%;
@@ -213,6 +211,9 @@ button:hover {
   width: 100%;
 }
 
+/* .bio{
+} */
+
 /* MEDIA BREAKPOINT 500PX */
 
 @media (max-width: 500px) {
@@ -238,9 +239,18 @@ button:hover {
   }
 
   .title-container div {
-      height: 40vh;
+    opacity: 0.8;
+    margin-left: 48px;
+    margin-right: 48px;
+    background-size: cover;
+    height: 30vh;
+    width: 60%;
+    margin-bottom: 0;
   }
 
+  .title-container hr {
+    width: 69%;
+  }
   button {
     padding: 1.7%;
     font-size: 1rem;
@@ -248,33 +258,43 @@ button:hover {
     border: 1px solid #626262;
     box-shadow: 1px 1px 1px #626262;
     transition: 0s;
+    color: #808080;
+    width: 33%;
+    padding: 5px;
+    box-shadow: 2px 2px 1px #626262;
   }
 
- 
+  .artists-container {
+    display: flex;
+    flex-direction: column;
+    align-items: space-evenly;
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 2%;
+    margin-bottom: 40px;
+  }
 
-.artists-container {
-  display: flex;
-  flex-direction: column;
-  align-items: space-around;
-  width: 70%;
-  margin: 0 auto;
-  margin-bottom: 40px;
-}
+  .artist {
+    width: 100%;
+    text-align: center;
+  }
+  .artist img {
+    margin: 0 auto;
+    width: 60%;
+    height: 40%;
+  }
 
-.artist {
-  width: 100%;
-  text-align: center;
-}
-.artist img {
-  width: 80%;
-  height: 24vh;
-}
+  .artist div {
+    font-size: 0.625rem;
+    font-weight: bolder;
+    line-height: 1.4;
+    width: 90%;
+  }
 
-.artist a {
-    font-size: 1.2rem;
-}
+  .artist a {
+    font-size: 1rem;
+  }
 
 .bio {
-    font-size: .3rem;
-    width: 100%;
+   margin-bottom: 30px;
 }

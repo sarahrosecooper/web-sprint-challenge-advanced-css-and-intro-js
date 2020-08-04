@@ -246,7 +246,7 @@ function getArtistByIndex(array, index) {
   return `The artist at index ${array[index].id} is ${array[index].name}`;
 }
 
-getArtistByIndex(artists, [0]);
+console.log(getArtistByIndex(artists, [0]));
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) 
 
@@ -255,11 +255,34 @@ born in 1889 and died in 1925 not included /
 
 / should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(/* Code here */) {
-  /* Code here */
-}
+function get20s(entireArray) {
+  let newYears = [];
+  entireArray.forEach((el) => {
+    // equivalent to a for each
+    el.years = el.years.split(" - ");
+    el.years.forEach((el) => {
+      el = parseInt(el);
+    });
 
-get20s();
+    if (el.years[0] >= 1900 && el.years[1] < 2000) {
+      newYears.push(el);
+    }
+  });
+  console.log("The answer to Task 4 is ", newYears);
+  console.log(" ");
+}
+get20s(artists);
+
+// const twentiesArtists = [];
+// function get20s(data) {
+//   data.forEach(function (data) {
+//     if (data.years > "1899" && data.years < "2000") {
+//       twentiesArtists.push(data.name);
+//     }
+//   });
+// }
+// console.log(twentiesArtists);
+// get20s(artists);
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -273,11 +296,11 @@ get20s();
  */
 
 function removeArtist(array, index) {
-  delete array[index];
-  // return artists;
+  array.splice(index, 1);
+  return array.length;
 }
 
-removeArtist(artists, 0);
+console.log(removeArtist(artists, 1));
 
 /**
 /* Task 6: Create a function called `addArtist` that can accept an object of information and add it to the artists array. Then, add a 21st artist to the array (you) with custom information!👩‍🎨👨‍🎨
@@ -292,20 +315,27 @@ bio: Add 1-2 sentences (or use lorem ipsum)
 
 At the end, this function should return the new array with information added"*/
 
-function addArtist() {
+function addArtist(id, name, years, genre, nationality, bio) {
   artists.push({
-    id: 20,
-    name: "sarah rose cooper",
-    years: "1992- current day",
-    genre: "Web Design",
-    nationality: "african american/caucasion",
-    bio:
-      " loves art, cats, music, poetry, lorem ipsum, lorem ipsum, lorem ipsum, lorem ipsum lorem ipsum, and crying over javascript",
+    id: id,
+    name: name,
+    years: years,
+    genre: genre,
+    nationality: nationality,
+    bio: bio,
   });
   return artists;
 }
 
-addArtist();
+console.log(
+  addArtist(
+    20,
+    "sarah rose cooper",
+    "1992-current",
+    "african american/white",
+    "lorem ipsum"
+  )
+);
 
 /* Task 7: Create a function called lotsOfArt() that takes one argument: 
 
@@ -315,12 +345,21 @@ and returns an array with names of artists who painted more than 100 paintings.
 
 For example lotsOfArt(artists); will return ["Amedeo Modigliani", "Rene Magritte", ..."Albrecht Dürer"]*/
 
-function lotsOfArt(/* Code here */) {
-  /* Code here */
+const copy = [];
+
+function lotsOfArt(array) {
+  array.forEach(function (array) {
+    if (array.paintings > 100) {
+      copy.push(array);
+    }
+  });
 }
 
+console.log(copy);
+lotsOfArt(artists);
 // 🎨🎨 STRETCH 🎨🎨//
 
+// fix css // get last text into array // task 4, research split and parseInt();
 /* STRETCH 1: Programtically console.log HTML element structure.
 
 In HTML, every artist and associated content uses the following structure: 
@@ -341,14 +380,20 @@ The function should console.log 50 chunks of HTML code that match the structure 
 
 ‼️ You do **NOT** need to get these to display on your page, but you can copy and paste the result into your HTML file if you'd like to see what that would look like. */
 
-function getHTML(/* Code here */) {
-  /* Code here */
-}
+// function getHTML(/* Code here */) {
+//   /* Code here */
+// }
 
 /* STRETCH 2: Create a function called `randomize` that takes a data array as an argument and returns a the same array in a randomized order. */
 
-function randomize(/* Code here */) {
-  /* Code here */
-}
+// function randomize(data) {
+//   return shuffle(data)
+//        }
+//      });
+
+//    }
+
+//    randomize(artists);
+// }
 
 /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
